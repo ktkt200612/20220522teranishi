@@ -6,33 +6,34 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <style>
-  th {
+    th {
       background-color: #289ADC;
       color: white;
       padding: 5px 40px;
-    }
-    tr:nth-child(odd) td{
-      background-color: #FFFFFF;
     }
     td {
       padding: 25px 40px;
       background-color: #EEEEEE;
       text-align: center;
     }
+    button {
+      padding: 10px 20px;
+      background-color: #289ADC;
+      border: none;
+      color: white;
+    }
   </style>
 </head>
 <body>
-<table>
-  <tr>
-    <th>Clients</th>
-  </tr>
-  @foreach ($items as $item)
-  <tr>
-    <td>
-      {{$item->getName()}}
-    </td>
-  </tr>
-  @endforeach
-</table> 
+  <form action="/client/add" method="post">
+  @csrf
+    <table>
+      <tr>
+        <th>会社名：</th>
+        <td><input type="text" name="name"></td>
+      </tr>
+    </table>
+    <button>送信</button>
+  </form> 
 </body>
 </html>

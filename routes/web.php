@@ -15,4 +15,8 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('/client', [ClientController::class, 'index']);
+Route::prefix('client')->group(function () {
+    Route::get('/', [ClientController::class, 'index']);
+    Route::get('/add', [ClientController::class, 'add']); //これで作成画面へ移行させる
+    Route::post('/add', [ClientController::class, 'create']);
+});
