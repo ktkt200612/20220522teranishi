@@ -40,10 +40,6 @@
         <th>メールアドレス：</th>
         <td><input type="email" name="email"></td>
       </tr>
-      <tr>
-        <th>ステータス：</th>
-        <td><input type="text" name="name"></td>
-      </tr>
     </table>
     <button>送信</button>
   </form> 
