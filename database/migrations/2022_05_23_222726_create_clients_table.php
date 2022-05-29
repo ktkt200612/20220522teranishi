@@ -15,15 +15,16 @@ class CreateClientsTable extends Migration
     {
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('tel');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->integer('status_id');
-            $table->integer('user_id');
-            $table->string('password');
+            $table->string('name')->nullable(false);
+            $table->string('delagate')->nullable(true);
+            $table->string('tel')->nullable(true);
+            $table->string('email')->unique()->nullable(true); //重複しない
+            $table->timestamp('email_verified_at');
+            $table->integer('status_id')->nullable(false);
+            $table->integer('user_id')->nullable(true);
             $table->rememberToken();
-            $table->timestamps();
+            $table->datetime('created_at')->nullable(true);
+            $table->datetime('updated_at')->nullable(true);
         });
     }
     //      $table->foreign('status_id')->references('id')->on('statuses');

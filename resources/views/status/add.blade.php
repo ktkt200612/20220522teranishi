@@ -25,32 +25,12 @@
   </style>
 </head>
 <body>
-  <form action="/client/add" method="post">
+  <form action="/status/add" method="post">
   @csrf
     <table>
       <tr>
-        <th>会社名：</th>
-        <td><input type="text" name="name"></td>
-      </tr>
-      <tr>
-        <th>代表者名：</th>
-        <td><input type="delagate" name="delagate"></td>
-      </tr>
-      <tr>
-        <th>電話番号：</th>
-        <td><input type="tel" name="tel"></td>
-      </tr>
-      <tr>
-        <th>メールアドレス：</th>
-        <td><input type="email" name="email"></td>
-      </tr>
-      <tr>
         <th>ステータス：</th>
-        <td><input type="number" name="status_id"></td>
-      </tr>
-      <tr>
-        <th>ユーザー：</th>
-        <td><input type="number" name="user_id"></td>
+        <td><input type="text" name="name"></td>
       </tr>
     </table>
     <button>送信</button>

@@ -13,7 +13,7 @@ class Status extends Model
     public function getName(){
         return $this->name ;
     }//Statusesテーブルの情報を返すgetTitleメソッド
-    public function client(){
+    public function clients(){ //複数なので複数形
         return $this->hasMany('App\Models\Client');
     }
 }
