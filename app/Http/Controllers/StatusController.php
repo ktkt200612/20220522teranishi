@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Status;
+use Illuminate\Support\Facades\Auth;
 
 class StatusController extends Controller
 {
@@ -18,9 +19,9 @@ public function add(Request $request){
     }
 
 
+
 public function relate(Request $request)
     {
-        $items = Status::all();
-        return view('status.index', ['items' => $items]);
-    }
+        $items = Status::where('user_id', \Auth::user()->id)->get();
+        return view('status.index', ['items'=>$items]);
 }
