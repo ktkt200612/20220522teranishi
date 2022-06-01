@@ -24,4 +24,5 @@ public function relate(Request $request)
     {
         $items = Status::where('user_id', \Auth::user()->id)->get();
         return view('status.index', ['items'=>$items]);
+    }
 }
