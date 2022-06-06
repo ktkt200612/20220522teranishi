@@ -25,7 +25,7 @@
   </style>
 </head>
 <body>
-  <form action="/client/add" method="post">
+  <form action="/add" method="post">
   @csrf
     <table>
       <tr>
@@ -51,7 +51,7 @@
       <tr>
         <th>ユーザー：</th>
         <td><input type="number" name="user_id"></td>
-      </tr>
+      {{-- </tr>//今のところこれがないとユーザーidに関連つけて追加できない --}}
     </table>
     <button>送信</button>
   </form> 

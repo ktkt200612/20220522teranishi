@@ -4,21 +4,23 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Client;
+use Illuminate\Support\Facades\Auth;
 
 class ClientController extends Controller
-{
-    public function index(Request $request){
-        $items = Client::all();
-        return view('client.index', ['items'=>$items]);
-    }//clientの全情報をclientのindex.blade.php(企業一覧画面)に渡す
-    
-    public function add(Request $request){
+{    
+    public function add(){
         return view('client.add');//これで作成画面（clientのadd.blade.php）へ移行させる
     }
     public function create(Request $request){
         $this->validate($request, Client::$rules);
         $form = $request->all();
         Client::create($form);
-        return redirect('/client');
+        return redirect('/index');
+    }
+    public function index()
+    {
+        $user = Auth::user();
+        $items = Client::where('user_id',$user->id)->get(); //Clientモデルのuser_idカラムを使ってwhereで検索
+        return view('client.index', ['items' => $items]);
     }
 }
