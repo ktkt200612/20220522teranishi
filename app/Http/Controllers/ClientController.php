@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 class ClientController extends Controller
 {    
     public function add(){
-        return view('client.add');//これで作成画面（clientのadd.blade.php）へ移行させる
+        return view('add');//これで作成画面（clientのadd.blade.php）へ移行させる
     }
     public function create(Request $request){
         $this->validate($request, Client::$rules);
@@ -21,6 +21,6 @@ class ClientController extends Controller
     {
         $user = Auth::user();
         $items = Client::where('user_id',$user->id)->get(); //Clientモデルのuser_idカラムを使ってwhereで検索
-        return view('client.index', ['items' => $items]);
+        return view('index', ['items' => $items]);
     }
 }

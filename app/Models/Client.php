@@ -13,4 +13,7 @@ class Client extends Model
     public function getName(){
         return $this->name;
     }//Clientsテーブルの情報を返すgetTitleメソッド
+    public function statuses(){ //複数なので複数形
+        return $this->hasOne('App\Models\Status');
+    }
 }

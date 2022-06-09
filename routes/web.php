@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\StatusController;
 
 
 Route::get('/', function () {
@@ -19,3 +20,7 @@ require __DIR__.'/auth.php';
 Route::get('/add', [ClientController::class, 'add']); //これで作成画面へ移行させる
 Route::post('/add', [ClientController::class, 'create']);
 Route::get('/index', [ClientController::class, 'index']); 
+
+Route::get('/status', [StatusController::class, 'add']);
+Route::post('/status/create', [StatusController::class, 'create']);
+Route::post('/status/update', [StatusController::class, 'update']);
