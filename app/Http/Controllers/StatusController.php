@@ -28,4 +28,11 @@ class StatusController extends Controller
         Status::where('id',$request->id)->update($form);
         return redirect('/status');
     } 
+    public function relate()
+    {
+        $items = Status::all();
+        return view('relate', ['items' => $items]);
+    }
 }
+//$user = Auth::user();
+//$items = Client::where('user_id',$user->id)->get();

@@ -25,7 +25,7 @@
         <form action="/status/update" method="POST">
           @csrf
       <tr>
-          <td><input type="text" name="name" value="  {{$item->getName()}}" ></td>
+          <td><input type="text" name="name" value="  {{$item->name}}" ></td>
           <td>
             <button name="id" value="{{$item->id}}">更新</button>
           </td>

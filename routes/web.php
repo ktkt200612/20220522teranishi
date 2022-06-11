@@ -24,3 +24,5 @@ Route::get('/index', [ClientController::class, 'index']);
 Route::get('/status', [StatusController::class, 'add']);
 Route::post('/status/create', [StatusController::class, 'create']);
 Route::post('/status/update', [StatusController::class, 'update']);
+
+Route::get('/relate', [StatusController::class, 'relate']);
