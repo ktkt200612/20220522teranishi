@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>ステータス別企業</title>
   <style>
   th {
       background-color: #289ADC;
@@ -28,28 +28,42 @@
 
 <body>
   <table>
-  <tr>
-    <th>ステータス</th>
-    <th>企業名</th>
-  </tr>
-  @foreach ($items as $item)
-  <tr>
-    <td>
-      {{$item->getName()}}
-    </td>
-    <td>
-      @if ($item->clients != null) {{-- //複数なので複数形(clients) ・$item->clientsで1つ以上のリレーションを確認できたら--}}
-        <table>
-          @foreach ($item->clients as $items) {{-- //複数なので複数形(clients) --}}
-            <tr>
-              <td>{{ $items->getName() }}</td>
-            </tr>
-          @endforeach
-        </table>
+    <tr>
+      <th>ステータス1</th>
+      <th>ステータス2</th>
+      <th>ステータス3</th>
+      <th>ステータス4</th>
+      <th>ステータス5</th>
+    </tr>
+    @foreach ($items as $item)
+    <tr>
+      <td>
+      @if ($item->status_id == 1)
+        {{$item->getName()}}
       @endif
-    </td>
-  </tr>
-  @endforeach
-</table>
+      </td>
+      <td>
+      @if ($item->status_id == 2)
+        {{$item->getName()}}
+      @endif
+      </td>
+      <td>
+      @if ($item->status_id == 3)
+        {{$item->getName()}}
+      @endif
+      </td>
+      <td>
+      @if ($item->status_id == 4)
+        {{$item->getName()}}
+      @endif
+      </td>
+      <td>
+      @if ($item->status_id == 5)
+        {{$item->getName()}}
+      @endif
+      </td>
+    </tr>
+    @endforeach
+  </table>
 </body>
 </html>
