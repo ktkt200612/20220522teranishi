@@ -29,41 +29,40 @@
 <body>
   <table>
     <tr>
-      <th>ステータス1</th>
-      <th>ステータス2</th>
-      <th>ステータス3</th>
-      <th>ステータス4</th>
-      <th>ステータス5</th>
+      @for($i = 0; $i < 1; $i++)
+        <th> @if($is[$i]->id == 1){{$is[$i]->getName()}}@endif</th> 
+      @endfor
+      @for($i = 1; $i < 2; $i++)
+        <th> @if($is[$i]->id == 2){{$is[$i]->getName()}}@endif</th> 
+      @endfor
+      @for($i = 2; $i < 3; $i++)
+        <th> @if($is[$i]->id == 3){{$is[$i]->getName()}}@endif</th> 
+      @endfor
+      @for($i = 3; $i < 4; $i++)
+        <th> @if($is[$i]->id == 4){{$is[$i]->getName()}}@endif</th> 
+      @endfor
+      @for($i = 4; $i < 5; $i++)
+        <th> @if($is[$i]->id == 5){{$is[$i]->getName()}}@endif</th> 
+      @endfor
     </tr>
-    @foreach ($items as $item)
+    
     <tr>
-      <td>
-      @if ($item->status_id == 1)
-        {{$item->getName()}}
-      @endif
-      </td>
-      <td>
-      @if ($item->status_id == 2)
-        {{$item->getName()}}
-      @endif
-      </td>
-      <td>
-      @if ($item->status_id == 3)
-        {{$item->getName()}}
-      @endif
-      </td>
-      <td>
-      @if ($item->status_id == 4)
-        {{$item->getName()}}
-      @endif
-      </td>
-      <td>
-      @if ($item->status_id == 5)
-        {{$item->getName()}}
-      @endif
-      </td>
+      @for($item = 0; $item < 1; $item++)
+        <td> @if ($items[$item]->status_id == 1){{$items[$item]->getName()}}@endif</td>
+      @endfor
+      @for($item = 1; $item < 2; $item++)
+        <td> @if ($items[$item]->status_id == 2){{$items[$item]->getName()}}@endif</td>
+      @endfor
+      @for($item = 2; $item < 3; $item++)
+        <td> @if ($items[$item]->status_id == 3){{$items[$item]->getName()}}@endif</td>
+      @endfor
+      @for($item = 3; $item < 4; $item++)
+        <td> @if ($items[$item]->status_id == 4){{$items[$item]->getName()}}@endif</td>
+      @endfor
+      @for($item = 4; $item < 5; $item++)
+        <td> @if ($items[$item]->status_id == 5){{$items[$item]->getName()}}@endif</td>
+      @endfor
     </tr>
-    @endforeach
   </table>
 </body>
 </html>

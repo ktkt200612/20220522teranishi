@@ -32,7 +32,8 @@ class StatusController extends Controller
     {
         $user = Auth::user();
         $items = Client::where('user_id',$user->id)->get();
-        return view('relate', ['items' => $items]);
+        $is = Status::all();
+        return view('relate', ['items' => $items,'is' => $is]);
     }
 }
 //$items = Status::all();
